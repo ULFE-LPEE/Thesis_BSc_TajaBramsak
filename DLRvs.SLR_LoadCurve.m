@@ -1,6 +1,6 @@
 clc; clear;
 
-%% SLR IN DLR (110kV) ACSR 490/65 
+%% SLR IN DLR (220kV) ACSR 490/65 
 hours = 1:23;
 n = numel(hours);
 
