@@ -1,6 +1,6 @@
 clc; clear;
 
-%% SLR IN DLR (ACRS 110kV) “Drake” 26/7 ACSR 
+%% SLR IN DLR (110kV) ACSR 490/65 
 hours = 1:23;
 n = numel(hours);
 
