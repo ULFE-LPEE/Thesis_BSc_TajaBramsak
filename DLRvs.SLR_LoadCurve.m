@@ -65,7 +65,7 @@ for k = 1:n
     mu_f = (17.239 + 4.635e-2 * T_f - 2.03e-5 * T_f^2) * 1e-6;              % dinamicno viskoznost zraka 
     nu_f = mu_f / gamma;                                                    % enacba 2.24
 
-    % Soncno obsevanje
+    % Soncno sevanje
     if t>=5 && t<20
         delta_s = deg2rad(23.4 * sin(2*pi*(284+N_i)/365));                  % enacba 2.14
         phi = deg2rad(phi_deg);                                             % zemljepisna sirina
@@ -185,7 +185,7 @@ for k = 1:n
     P_c_nat = pi * lambda_f * (T_s - T_a) * Nu_beta;
     P_c = max(P_c_forced, P_c_nat);
 
-    % Izguba zaradi sevanja
+    % Izguba zaradi radiacije
     P_r = pi * D * sigma * eps * ((T_s + 273)^4 - (T_a + 273)^4);
     P_s = alpha_s * I_T * D;
 
@@ -214,7 +214,7 @@ end
  plot(hours, IT_arr, 'g-', 'LineWidth',1.5);
  ylabel('I_T (W/m^2)');
  
- xlabel('Ura [h]');
+ xlabel('Cas [h]');
  title('24-urni potek hitrosti vetra, temperature okolice in soncnega obsevanja');
  legend({'V_{vetra}','T_a','I_T'}, 'Location','best');
  grid on;
@@ -224,7 +224,7 @@ end
  % Prikaz smeri vetra glede na vodnik
  figure;
  plot(hours, delta_deg_arr, 'g-', 'LineWidth', 2);
- xlabel('Ura [h]');
+ xlabel('Cas [h]');
  ylabel('Kot \delta [°]');
  title('24-urni potek smeri vetra glede na vodnik (kot \delta)');
  grid on;
@@ -238,7 +238,7 @@ end
  figure;
  plot(hours, I_DLR, 'r-', 'LineWidth',1.5); hold on;
  plot(hours, I_SLR, 'b-', 'LineWidth',1.5);
- xlabel('Ura [h]');
+ xlabel('Cas [h]');
  ylabel('Tokovna zmogljivost [A]');
  title('Potek DLR in SLR');
  legend({'I_{DLR}','I_{SLR}'}, 'Location','best');
@@ -267,20 +267,20 @@ I_static = mean(I_SLR);
 % Izris Loadability Duration Curve
 figure;
 plot(percent_time, I_sorted, 'g-', 'LineWidth', 2); hold on;
-xlabel('Procent časa v dnevu [%]');
+xlabel('Procent casa v dnevu [%]');
 ylabel('Tokovna zmogljivost [A]');
-title('Loadability Duration Curve – 24h DLR');
+title('Krivulja trajanja prenosne zmogljivosti – 24h DLR');
 
 % Staticne meje
-yline(I_static, '--', 'static limit', 'Color', 'k');
-yline(1.1 * I_static, '--', '110% static limit', 'Color', [0 0 1]);
-yline(1.2 * I_static, '--', '120% static limit', 'Color', [0.2 0.6 1]);
+yline(I_static, '--', 'Staticna meja', 'Color', 'k');
+yline(1.1 * I_static, '--', '110% staticna meja', 'Color', [0 0 1]);
+yline(1.2 * I_static, '--', '120% staticna meja', 'Color', [0.2 0.6 1]);
 
 % Navpicne crte za vizualno interpretacijo
 xline(60, '--', 'Color', [0.3 0.3 0.8]);
 xline(80, '--', 'Color', [0.3 0.3 0.8]);
 xline(90, '--', 'Color', [0.3 0.3 0.8]);
 
-legend('I_{DLR}', 'Static limit', '110% limit', '120% limit', ...
-       '60% časa', '80% časa', '90% časa', 'Location','northeast');
+legend('I_{DLR}', 'Staticna meja', '110% meja', '120% meja', ...
+       '60% casa', '80% casa', '90% casa', 'Location','northeast');
 grid on;
