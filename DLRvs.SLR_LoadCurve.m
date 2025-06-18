@@ -44,11 +44,11 @@ N_i = 117;             % dan v letu
 for k = 1:n
     t = hours(k);
 
-    % Ssprememba smeri vetra v stopinjah [°]
+    % Sprememba smeri vetra v stopinjah [°]
     smer_vetra_deg = 130 + 70 * sin(2 * pi * (t - 14) / 24);
 
 
-    % Izracun beta kota
+    % Izracun delta kota
     delta = abs(smer_vetra_deg - azim_v_deg);
     delta_deg = min(delta, 360 - delta);  % vedno med 0° in 180°
 
