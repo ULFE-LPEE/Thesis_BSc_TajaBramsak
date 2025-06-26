@@ -57,5 +57,6 @@ termicno zmogljivost vodnika. Pridobljeni rezultati nudijo uporaben vpogled v de
 sistema ter jasno prikažejo prednosti DLR ter vpliv vremenskih parametrov, hkrati pa 
 možnosti za nadaljnjo nadgradnjo in razvoj naprednejsih metod dolocanja prenosnih
 zmogljivosti. 
+
 **Kljucne besede**: dinamicno ugotavljanje termicnih zmogljivosti, nadzemni vodi,
 elektroenergetski sistem, prenosne zmogljivosti, vremenske razmere 
